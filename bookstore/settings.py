@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'store.apps.StoreConfig',
     'registration',
+    'bootstrap3',
+    'bootstrap_themes',
 ]
 
 MIDDLEWARE = [
