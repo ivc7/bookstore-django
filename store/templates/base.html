@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenidos</title>
+</head>
+<body>
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <h4>
+            Welcome, {% if request.user.first_name %}
+            {{ request.user.first_name }}
+            {% else %}
+            {{ request.user.username }}
+            {% endif %} <a href="{% url 'auth_logout' %}">Logout</a>
+        </h4>
+    {% else %}
+        <h4>
+        Welcome to the Mystery Books store! Would you like to <a href="{% url 'auth_login'%}">Log in?</a>
+
+        </h4>
+
+    {% endif %}
+User Location: {{ request.session.location }}
+{% endblock %}
+</body>
+</html>

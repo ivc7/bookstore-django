@@ -1,0 +1,7 @@
+Greetings,
+
+You should signed up for an account at {{site.name}}. Please click the link below to activate it.
+
+http://{{ site.domain }} {$ url 'registration_activate' activation_key $}
+
+-The Mystery Books Team
