@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
     'store.apps.StoreConfig',
     'registration',
     'bootstrap3',
@@ -67,10 +68,18 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = {
+    'social.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+
+}
 
 WSGI_APPLICATION = 'bookstore.wsgi.application'
 
@@ -144,3 +153,7 @@ EMAIL_HOST_PASSWORD = "abecedario"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "books@mysterybooks.com"
+
+# Social Auth - Facebook
+SOCIAL_AUTH_FACEBOOK_KEY = '212174672559984'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'b2750b880c19bb0c2b9a1ba9934f65ed'
