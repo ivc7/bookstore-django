@@ -1,2 +1,8 @@
 Django==1.10.3
 django-registration-redux==1.4
+django-bootstrap==0.2.4
+django-bootstrap3==7.1.0
+django-bootstrap-themes==3.3.6
+django-compressor==2.1
+python-social-auth==0.2.21
+
