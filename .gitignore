@@ -148,3 +148,6 @@ ENV/
 
 *.sqlite3
 .idea
+
+#Compiled static assets
+static/
